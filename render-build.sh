@@ -1,10 +1,11 @@
-#!/usr/bin/env bash
-# Install PHP and Composer
+#!/bin/bash
+
+# Install Composer dependencies
 curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 
-# Install Laravel dependencies
-composer install --no-dev --optimize-autoloader
+# Install PHP dependencies
+composer install --no-dev --prefer-dist --optimize-autoloader
 
-# Run migrations (only if your app requires a database)
+# Run migrations (if needed)
 php artisan migrate --force
