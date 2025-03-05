@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: laravel-app
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_KEY
+        value: your-laravel-app-key
+      - key: DB_CONNECTION
+        value: sqlite # Change if using MySQL/PostgreSQL
+      - key: DB_DATABASE
+        value: database_name
+      - key: DB_USERNAME
+        value: database_user
+      - key: DB_PASSWORD
+        value: database_password
